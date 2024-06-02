@@ -59,6 +59,11 @@ body, html {
         padding: 5px 0; /* Adiciona um espaçamento interno */
         border-radius: 0; /* Remove o raio da borda */
         box-shadow: 0 -5px 5px rgba(0,0,0,0.1); /* Adiciona uma sombra na parte inferior */
+        margin-top: 20px;
+    }
+
+    .top-navbar {
+        margin-bottom: 20px;
     }
 
     .social-icons {
