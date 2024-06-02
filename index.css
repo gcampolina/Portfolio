@@ -1,0 +1,328 @@
+body, html {
+    font-family: "Montserrat", sans-serif;
+    background: #53575c;
+    margin: 0;
+    scroll-behavior: smooth; /* Adiciona rolagem suave */
+    box-sizing: border-box;
+    
+}
+
+/* ESTILO PARA BARRA DE ROLAGEM */
+
+::-webkit-scrollbar {
+    width: 8px; /* Largura da barra de rolagem */
+    height: 8px; /* Altura da barra de rolagem */
+    background-color: rgba(5, 5, 5, 0.3);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #fff; /* Cor do polegar da barra de rolagem */
+    border-radius: 10px; /* Borda arredondada */
+}
+
+
+
+.sidebar {
+    width: 60px;
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    background-color: rgba(5, 5, 5, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 50px;
+    border-radius: 50px;
+}
+
+/* Estilos para a barra lateral em telas menores (celulares) */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%; /* Ocupa a largura total */
+        height: auto; /* Altura automática */
+        top: auto;
+        bottom: 0; /* Fixa a barra na parte inferior */
+        transform: translateY(0); /* Remove a transformação */
+        flex-direction: row; /* Ajusta a direção do flex para linha */
+        justify-content: space-around; /* Espaçamento uniforme dos itens */
+        margin: 0; /* Remove a margem */
+        padding: 10px 0; /* Adiciona um espaçamento interno */
+        border-radius: 0; /* Remove o raio da borda */
+        box-shadow: 0 -5px 5px rgba(0,0,0,0.1); /* Adiciona uma sombra na parte inferior */
+    }
+}
+
+.sidebar a {
+    padding: 20px 0;
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
+    display: block;
+    width: 100%;
+    position: relative;
+}
+
+
+.sidebar a.active {
+    color: #10ca1f;
+}
+
+.sidebar a::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    right: 70px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #1e1e1f;
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 5px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+
+.sidebar a:hover::after {
+    opacity: 1;
+}
+
+
+/* TOP BAR */
+
+.top-navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0px;
+    position: fixed;
+    background-color: transparent;
+    z-index: 1000;
+}
+
+.top-navbar a {
+    text-decoration: none;
+    color: #fff;
+   
+}
+
+.brand {
+    display: flex;
+    align-items: center;    
+    color: #fff;
+    margin-left: 10%;
+    font-size: 20px;
+    font-weight: 500;
+    
+}
+
+.brand a {
+    display: inline-flex;
+    align-items: center;
+    padding: 0;
+}
+
+.brand img {
+    margin-right: 10px;
+    height: auto; 
+    width: 40px;
+}
+
+.social-icons {
+    margin-right: 10%;
+}
+
+.social-icons a {
+    color: #fff;
+    margin: 10px;
+    
+}
+
+.social-icons a:hover {
+    color: #10ca1f;
+}
+
+.social-icons a i {
+    font-size: 20px;
+}
+
+
+/* PROJETOS */
+.projetos-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -40vh; /* Metade da altura do contêiner */
+    margin-left: -35%;
+    width: 70%;
+    max-height: 80vh; /* Defina uma altura máxima em relação à altura da tela */
+    overflow-y: auto; 
+}
+  
+  .slide {
+    margin: 5px;
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 50px;
+    position: relative;
+  }
+
+  .slide:hover {
+    cursor: pointer;
+    opacity: 50%;
+  }
+
+  .eye-icon {
+    position: absolute; /* Posição absoluta em relação à div.slide */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    color: #10ca1f; /* Cor do ícone de olho */
+    opacity: 0; /* Inicialmente oculto */
+    transition: opacity 0.3s; /* Adiciona transição suave */
+  }
+  
+  .slide:hover .eye-icon {
+    opacity: 1; /* Mostra o ícone de olho ao passar o mouse sobre a div.slide */
+  }
+  
+  .slide img {
+    
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .description {
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  @media (min-width: 768px) {
+    .projetos-container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    
+    .slide {
+      width: calc(33% - 20px);
+      margin-right: 20px;
+    }
+    
+    .slide:nth-child(3n) {
+      margin-right: 0;
+    }
+  }
+
+
+/* CONTENT GERAL */
+
+.content {
+    text-align: center;
+    max-width: 900px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-height: 80vh;
+    overflow-y: auto; 
+}
+
+
+.content img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 200px;
+    margin-bottom: 20px;
+    opacity: 85%;
+    background: linear-gradient(to bottom right, rgba(0,0,0,0), rgba(0,0,0,0.25));
+}
+
+
+
+.content h1 {
+    color: #fff;
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.content h1 span {
+    color: #10ca1f;
+}
+
+.content p {
+    color: #fff;
+    font-size: 18px;
+    line-height: 1.6;
+    
+}
+
+
+
+.projects {
+    color: #fff;
+    margin-top: 30px;
+    font-size: 20px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.projects a {
+    color: #10ca1f;
+    text-decoration: none;
+    font-size: 24px;
+    margin-left: 10px;
+}
+
+
+
+/*  ANIMANDO CURSOR APÓS DIGITAÇÃO DO NOME */
+#typing {
+    font-size: 50px;
+    white-space: nowrap;
+    white-space: pre-wrap; /* Permite quebras de linha e espaços, para o texto ficar responsivo
+    outros aparelhos */
+}
+
+.highlight {
+    color: #10ca1f;
+}
+
+
+
+
+#cursor {
+    border-right: 6px solid white;
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+
+/*  ANIMAÇÃO FADE-IN AO EXIBIR ALGUNS ELEMENTOS DA PÁGINA AO CARREGÁ-LA */
+.fade-in {
+    opacity: 0;  
+    animation: fadeInAnimation ease 3s; 
+    animation-fill-mode: forwards; 
+}
+
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
