@@ -1,11 +1,19 @@
 body, html {
     font-family: "Montserrat", sans-serif;
     background: #53575c;
+    background-image: url(media/pattern.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
     margin: 0;
     scroll-behavior: smooth; /* Adiciona rolagem suave */
     box-sizing: border-box;
     
 }
+
+
+
 
 /* ESTILO PARA BARRA DE ROLAGEM */
 
@@ -48,10 +56,19 @@ body, html {
         flex-direction: row; /* Ajusta a direção do flex para linha */
         justify-content: space-around; /* Espaçamento uniforme dos itens */
         margin: 0; /* Remove a margem */
-        padding: 10px 0; /* Adiciona um espaçamento interno */
+        padding: 5px 0; /* Adiciona um espaçamento interno */
         border-radius: 0; /* Remove o raio da borda */
         box-shadow: 0 -5px 5px rgba(0,0,0,0.1); /* Adiciona uma sombra na parte inferior */
     }
+
+    .social-icons {
+        display: flex;     
+    }
+
+    .content {
+        height: 700px;
+    }
+
 }
 
 .sidebar a {
