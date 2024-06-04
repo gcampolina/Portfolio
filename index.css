@@ -1,4 +1,15 @@
-body, html {
+body, h1, h2, ul, li, p, dd, dt, dl {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    
+}
+
+body {
     font-family: "Montserrat", sans-serif;
     background: #53575c;
     background-image: url(media/pattern.png);
@@ -6,11 +17,10 @@ body, html {
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
-    margin: 0;
-    scroll-behavior: smooth; /* Adiciona rolagem suave */
-    box-sizing: border-box;
-    
+    display: grid;
+    grid-template-columns: 1fr 120px minmax(300px, 800px) 1fr;
 }
+
 
 
 
@@ -71,8 +81,9 @@ body, html {
     }
 
     .content {
-        height: 500px;
+        width: 100%;
     }
+    
 
 }
 
@@ -192,6 +203,10 @@ body, html {
     position: relative;
   }
 
+  .slide a {
+    text-decoration: none;
+  }
+
   .slide:hover {
     cursor: pointer;
     opacity: 50%;
@@ -231,10 +246,10 @@ body, html {
     }
     
     .slide {
-      width: calc(33% - 20px);
-      margin-right: 20px;
-    }
-    
+        width: calc(33% - 20px);
+        margin-right: 20px;
+      }
+      
     .slide:nth-child(3n) {
       margin-right: 0;
     }
@@ -266,6 +281,11 @@ body, html {
 }
 
 
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 .content h1 {
     color: #fff;
@@ -333,10 +353,12 @@ body, html {
 
 
 /*  ANIMAÇÃO FADE-IN AO EXIBIR ALGUNS ELEMENTOS DA PÁGINA AO CARREGÁ-LA */
-.fade-in {
-    opacity: 0;  
-    animation: fadeInAnimation ease 3s; 
-    animation-fill-mode: forwards; 
+.fade-in { 
+    animation: fadeInAnimation 3s forwards; 
+}
+
+.show { 
+    animation: show 0.5s forwards; 
 }
 
 
@@ -346,5 +368,17 @@ body, html {
     }
     100% {
         opacity: 1;
+    }
+}
+
+
+@keyframes show {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 20px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
     }
 }
