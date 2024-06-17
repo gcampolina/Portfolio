@@ -198,9 +198,13 @@ body {
   .slide {
     margin: 5px;
     margin-bottom: 20px;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
     border-radius: 50px;
     position: relative;
+  }
+
+  .slide h2,p{
+    padding: 20px;
   }
 
   .slide a {
@@ -209,7 +213,7 @@ body {
 
   .slide:hover {
     cursor: pointer;
-    opacity: 50%;
+    opacity: 60%;
   }
 
   .eye-icon {
@@ -218,7 +222,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 24px;
-    color: #10ca1f; /* Cor do ícone de olho */
+    color: #07f81b; /* Cor do ícone de olho */
     opacity: 0; /* Inicialmente oculto */
     transition: opacity 0.3s; /* Adiciona transição suave */
   }
@@ -228,7 +232,7 @@ body {
   }
   
   .slide img {
-    
+    width: 100%;
     max-width: 100%;
     height: auto;
   }
